@@ -1,0 +1,16 @@
+{
+"name": "./tiles/event-13/flood",
+"description": "./tiles/event-13/flood",
+"version": "2",
+"minzoom": "0",
+"maxzoom": "12",
+"center": "-97.778320,26.155431,12",
+"bounds": "-99.256275,25.793949,-97.077656,26.872160",
+"antimeridian_adjusted_bounds": "-99.256275,25.793949,-97.077656,26.872160",
+"type": "overlay",
+"strategies": "[{\"tiny_polygons\":69387},{\"tiny_polygons\":69386},{\"tiny_polygons\":69379},{\"tiny_polygons\":69357},{\"tiny_polygons\":69275},{\"tiny_polygons\":68881},{\"tiny_polygons\":67098},{\"tiny_polygons\":64948},{\"dropped_as_needed\":44168,\"tiny_polygons\":13534,\"tile_size_desired\":601141},{\"dropped_as_needed\":15003,\"tiny_polygons\":31364,\"tile_size_desired\":503841},{\"tiny_polygons\":38428},{\"tiny_polygons\":30955},{\"tiny_polygons\":17623}]",
+"format": "pbf",
+"generator": "tippecanoe v2.62.0",
+"generator_options": "tippecanoe -z12 -e ./tiles/event-13/flood --no-tile-compression '--minimum-zoom=0' '--maximum-zoom=12' --drop-densest-as-needed --extend-zooms-if-still-dropping -L floodlayer:./output/event-13/flood/geo-contours-filtered.geojson",
+"json": "{\"vector_layers\":[{\"id\":\"floodlayer\",\"description\":\"\",\"minzoom\":0,\"maxzoom\":12,\"fields\":{\"DN\":\"Number\"}}],\"tilestats\":{\"layerCount\":1,\"layers\":[{\"layer\":\"floodlayer\",\"count\":69388,\"geometry\":\"Polygon\",\"attributeCount\":1,\"attributes\":[{\"attribute\":\"DN\",\"count\":1,\"type\":\"number\",\"values\":[1],\"min\":1,\"max\":1}]}]}}"
+}

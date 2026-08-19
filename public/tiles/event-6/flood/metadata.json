@@ -1,0 +1,16 @@
+{
+"name": "./tiles/event-6/flood",
+"description": "./tiles/event-6/flood",
+"version": "2",
+"minzoom": "0",
+"maxzoom": "16",
+"center": "-98.627014,26.630273,16",
+"bounds": "-99.352088,25.756604,-97.034587,26.922403",
+"antimeridian_adjusted_bounds": "-99.352088,25.756604,-97.034587,26.922403",
+"type": "overlay",
+"strategies": "[{\"tiny_polygons\":136119},{\"tiny_polygons\":136119},{\"tiny_polygons\":136111},{\"tiny_polygons\":136080},{\"tiny_polygons\":135900},{\"tiny_polygons\":135131},{\"tiny_polygons\":132447},{\"tiny_polygons\":133803},{\"dropped_as_needed\":112187,\"tiny_polygons\":19350,\"tile_size_desired\":843187},{\"dropped_as_needed\":80800,\"tiny_polygons\":34636,\"tile_size_desired\":616073},{\"tiny_polygons\":84643},{\"tiny_polygons\":66443},{\"tiny_polygons\":36526},{\"tiny_polygons\":138},{\"tiny_polygons\":42},{\"tiny_polygons\":21},{\"tiny_polygons\":9}]",
+"format": "pbf",
+"generator": "tippecanoe v2.62.0",
+"generator_options": "tippecanoe -z16 -e ./tiles/event-6/flood --no-tile-compression '--minimum-zoom=0' '--maximum-zoom=16' --drop-densest-as-needed --extend-zooms-if-still-dropping -L floodlayer:./output/event-6/flood/geo-contours-filtered.geojson",
+"json": "{\"vector_layers\":[{\"id\":\"floodlayer\",\"description\":\"\",\"minzoom\":0,\"maxzoom\":16,\"fields\":{\"DN\":\"Number\"}}],\"tilestats\":{\"layerCount\":1,\"layers\":[{\"layer\":\"floodlayer\",\"count\":136120,\"geometry\":\"Polygon\",\"attributeCount\":1,\"attributes\":[{\"attribute\":\"DN\",\"count\":1,\"type\":\"number\",\"values\":[1],\"min\":1,\"max\":1}]}]}}"
+}

@@ -1,0 +1,16 @@
+{
+"name": "./tiles/event-2/flood",
+"description": "./tiles/event-2/flood",
+"version": "2",
+"minzoom": "0",
+"maxzoom": "16",
+"center": "-97.599792,26.103654,16",
+"bounds": "-99.223491,25.794095,-97.089281,26.884429",
+"antimeridian_adjusted_bounds": "-99.223491,25.794095,-97.089281,26.884429",
+"type": "overlay",
+"strategies": "[{\"tiny_polygons\":141884},{\"tiny_polygons\":141881},{\"tiny_polygons\":141874},{\"tiny_polygons\":141831},{\"tiny_polygons\":141613},{\"tiny_polygons\":140682},{\"tiny_polygons\":137287},{\"dropped_as_needed\":98680,\"tiny_polygons\":42259,\"tile_size_desired\":601208},{\"dropped_as_needed\":127227,\"tiny_polygons\":11722,\"tile_size_desired\":1113906},{\"dropped_as_needed\":119942,\"tiny_polygons\":14829,\"tile_size_desired\":917991},{\"dropped_as_needed\":76942,\"tiny_polygons\":26048,\"tile_size_desired\":625807},{\"tiny_polygons\":56920},{\"tiny_polygons\":31602},{\"tiny_polygons\":97},{\"tiny_polygons\":34},{\"tiny_polygons\":17},{\"tiny_polygons\":18}]",
+"format": "pbf",
+"generator": "tippecanoe v2.62.0",
+"generator_options": "tippecanoe -z16 -e ./tiles/event-2/flood --no-tile-compression '--minimum-zoom=0' '--maximum-zoom=16' --drop-densest-as-needed --extend-zooms-if-still-dropping -L floodlayer:./output/event-2/flood/geo-contours-filtered.geojson",
+"json": "{\"vector_layers\":[{\"id\":\"floodlayer\",\"description\":\"\",\"minzoom\":0,\"maxzoom\":16,\"fields\":{\"DN\":\"Number\"}}],\"tilestats\":{\"layerCount\":1,\"layers\":[{\"layer\":\"floodlayer\",\"count\":141886,\"geometry\":\"Polygon\",\"attributeCount\":1,\"attributes\":[{\"attribute\":\"DN\",\"count\":1,\"type\":\"number\",\"values\":[1],\"min\":1,\"max\":1}]}]}}"
+}
