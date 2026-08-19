@@ -8,5 +8,6 @@ In order to download a working zip file of the app for deployment, make sure to 
 
 ## Next steps (TODO)
 
+- [ ] Add final mapbox token (NEXT_PUBLIC_MAPBOX_TOKEN)
 - [ ] Add tailwindcss as a styling solution
 - [ ] Refactor to use next js app directory
