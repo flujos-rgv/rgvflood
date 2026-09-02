@@ -109,7 +109,7 @@ export default function Search() {
               const isHighlighted = itemProps["data-highlighted"] === ""
               return (
                 <li
-                  key={item.code}
+                  key={`col-${item.code}`}
                   {...itemProps}
                   style={{
                     background: isHighlighted ? "#06F" : "transparent",
@@ -156,7 +156,7 @@ export default function Search() {
               const isHighlighted = itemProps["data-highlighted"] === ""
               return (
                 <li
-                  key={item.code}
+                  key={`mb-${item.code}`}
                   {...itemProps}
                   style={{
                     background: isHighlighted ? "#06F" : "transparent",
