@@ -89,7 +89,7 @@ export const useCombobox = ({ data, ...restProps }) => {
         const cleanMapboxResults = mapboxResults.suggestions.map((d) => {
           return {
             label: d.name,
-            code: d.name,
+            code: d.mapbox_id,
             place_formatted: d.place_formatted,
             group: "mapbox",
             data: d,
