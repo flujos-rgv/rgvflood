@@ -31,6 +31,8 @@ export default function Search() {
   const coloniaResults = options.filter((d) => d.group === "colonias")
   const mapboxResults = options.filter((d) => d.group === "mapbox")
 
+  const inputProps = api.getInputProps()
+
   return (
     <div style={{ position: "relative" }}>
       <div {...api.getRootProps()}>
@@ -46,7 +48,23 @@ export default function Search() {
           }}
         >
           <input
-            {...api.getInputProps()}
+            {...inputProps}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                const currentHighlight = api.highlightedItem
+                const currentSelection = api.selectedItems
+                const nextItem =
+                  currentHighlight?.code ||
+                  currentSelection?.code ||
+                  options[0]?.code
+                if (nextItem) {
+                  api.selectValue(nextItem)
+                  api.setOpen(false)
+                }
+              } else {
+                inputProps.onKeyDown(e)
+              }
+            }}
             placeholder={content.search}
             style={{
               position: "relative",
@@ -109,7 +127,7 @@ export default function Search() {
               const isHighlighted = itemProps["data-highlighted"] === ""
               return (
                 <li
-                  key={`col-${item.code}`}
+                  key={item.code}
                   {...itemProps}
                   style={{
                     background: isHighlighted ? "#06F" : "transparent",
@@ -156,7 +174,7 @@ export default function Search() {
               const isHighlighted = itemProps["data-highlighted"] === ""
               return (
                 <li
-                  key={`mb-${item.code}`}
+                  key={item.code}
                   {...itemProps}
                   style={{
                     background: isHighlighted ? "#06F" : "transparent",

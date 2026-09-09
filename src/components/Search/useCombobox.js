@@ -38,17 +38,6 @@ export const useCombobox = ({ data, ...restProps }) => {
       collection,
       openOnClick: true,
       placeholder: "Search for a colonia or address",
-      // selectionBehavior: "replace",
-      // inputBehavior: "autohighlight",
-      // onOpenChange({ open }) {
-      //   const filtered = open
-      //     ? matchSorter(data, this.inputValue, {
-      //         keys: ["label", "code"],
-      //         threshold: matchSorter.rankings.STARTS_WITH,
-      //       })
-      //     : data
-      //   setOptions(filtered)
-      // },
       onValueChange: async (d) => {
         const selectedItem = d?.items?.[0] || {}
         if (!selectedItem?.data) {
@@ -66,11 +55,6 @@ export const useCombobox = ({ data, ...restProps }) => {
         }
       },
       onInputValueChange: _debounce(async ({ inputValue }) => {
-        // const filtered = data.filter((item) =>
-        //   item.label.toLowerCase().includes(inputValue.toLowerCase())
-        // )
-        // setOptions(filtered.length > 0 ? filtered : data)
-
         if (!inputValue) {
           const results = matchSorter(referenceData.current, "A", {
             keys: ["label"],
@@ -102,6 +86,7 @@ export const useCombobox = ({ data, ...restProps }) => {
         })
 
         const combinedResults = [...results.slice(0, 6), ...cleanMapboxResults]
+        // .map((d, i) => ({ ...d, code: `${i}` }))
 
         setOptions(combinedResults)
       }, 300),
