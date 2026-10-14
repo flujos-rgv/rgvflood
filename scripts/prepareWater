@@ -1,0 +1,11 @@
+rm -Rf ./public/water
+mkdir ./public/water
+
+tippecanoe \
+  -z12 -e ./public/water \
+  --no-tile-compression \
+  --minimum-zoom=0 \
+  --maximum-zoom=12 \
+  --drop-densest-as-needed \
+  --extend-zooms-if-still-dropping \
+  -L waterlayer:./data/perm_water_final_final_compact-wgs84.geojson

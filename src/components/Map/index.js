@@ -89,6 +89,14 @@ export default function MapboxMap() {
 
       const allLayerIds = layers.map((d) => d.id)
 
+      if (allLayerIds.includes("perm-water-fill")) {
+        try {
+          map.removeLayer("perm-water-fill")
+        } catch (err) {
+          console.log("Couldn't remove perm-water layer", err)
+        }
+      }
+
       if (allLayerIds.includes("flood-fill")) {
         try {
           map.removeLayer("flood-fill")
@@ -102,6 +110,14 @@ export default function MapboxMap() {
           map.removeLayer("noflood-fill")
         } catch (err) {
           console.log("Couldn't remove noflood-fill layer", err)
+        }
+      }
+
+      if (map.getSource("perm-water")) {
+        try {
+          map.removeSource("perm-water")
+        } catch (err) {
+          console.log("Couldn't remove perm-water source", err)
         }
       }
 
@@ -120,6 +136,27 @@ export default function MapboxMap() {
           console.log("Couldn't remove noflood source", err)
         }
       }
+
+      map.addSource("perm-water", {
+        type: "vector",
+        tiles: [`${window.location.origin}/water/{z}/{x}/{y}.pbf`],
+        minzoom: 0,
+        maxzoom: 12,
+      })
+
+      map.addLayer(
+        {
+          id: "perm-water-fill",
+          type: "fill",
+          source: "perm-water",
+          "source-layer": "waterlayer",
+          paint: {
+            "fill-color": "#002266",
+            "fill-opacity": 0.8,
+          },
+        },
+        "water"
+      )
 
       if (!showFloodLayers) return
 
@@ -157,6 +194,49 @@ export default function MapboxMap() {
           // "water"
         )
       }
+
+      fetch(`/data/rgv_cities-simplified.json`)
+        .then((res) => res.json())
+        .then((cities) => {
+          const citiesFill = mapRef.current.getLayer("cities-fill")
+          if (citiesFill) mapRef.current.removeLayer(citiesFill.id)
+
+          const citiesOutline = mapRef.current.getLayer("cities-outline")
+          if (citiesOutline) mapRef.current.removeLayer(citiesOutline.id)
+
+          mapRef.current.addSource("cities", {
+            "type": "geojson",
+            "data": cities,
+          })
+
+          mapRef.current.addLayer(
+            {
+              "id": "cities-fill",
+              "type": "fill",
+              "source": "cities",
+              "layout": {},
+              "paint": {
+                "fill-color": "#FFF",
+                "fill-opacity": 0.15,
+              },
+            },
+            "water"
+          )
+
+          mapRef.current.addLayer(
+            {
+              "id": "cities-outline",
+              "type": "line",
+              "source": "cities",
+              "layout": {},
+              "paint": {
+                "line-color": "#FFF",
+                "line-width": 1,
+              },
+            },
+            "water"
+          )
+        })
 
       map.addLayer(
         {
@@ -234,7 +314,6 @@ export default function MapboxMap() {
           .layers.find(
             (layer) => layer.type === "symbol" && layer.layout["text-field"]
           ).id
-
         mapRef.current.addSource("colonia", {
           "type": "geojson",
           "data": {

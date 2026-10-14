@@ -1,0 +1,16 @@
+{
+"name": "./public/water",
+"description": "./public/water",
+"version": "2",
+"minzoom": "0",
+"maxzoom": "12",
+"center": "-97.426758,26.470566,12",
+"bounds": "-99.404605,25.242414,-97.144923,27.065446",
+"antimeridian_adjusted_bounds": "-99.404605,25.242414,-97.144923,27.065446",
+"type": "overlay",
+"strategies": "[{\"tiny_polygons\":1},{\"tiny_polygons\":1},{\"tiny_polygons\":1},{\"tiny_polygons\":1},{\"tiny_polygons\":1},{\"tiny_polygons\":1},{\"tiny_polygons\":2},{\"tiny_polygons\":3},{\"tiny_polygons\":4},{\"tiny_polygons\":11},{\"tiny_polygons\":24},{\"tiny_polygons\":17},{\"tiny_polygons\":16}]",
+"format": "pbf",
+"generator": "tippecanoe v2.62.0",
+"generator_options": "tippecanoe -z12 -e ./public/water --no-tile-compression '--minimum-zoom=0' '--maximum-zoom=12' --drop-densest-as-needed --extend-zooms-if-still-dropping -L waterlayer:./data/perm_water_final_final_compact-wgs84.geojson",
+"json": "{\"vector_layers\":[{\"id\":\"waterlayer\",\"description\":\"\",\"minzoom\":0,\"maxzoom\":12,\"fields\":{\"layer\":\"String\",\"path\":\"String\"}}],\"tilestats\":{\"layerCount\":1,\"layers\":[{\"layer\":\"waterlayer\",\"count\":1,\"geometry\":\"Polygon\",\"attributeCount\":2,\"attributes\":[{\"attribute\":\"layer\",\"count\":1,\"type\":\"string\",\"values\":[\"perm_water_final6\"]},{\"attribute\":\"path\",\"count\":1,\"type\":\"string\",\"values\":[\"D:/FLUJOS_Database/RGV_Permanent_Water_August_2026/perm_water_final6.geojson\"]}]}]}}"
+}
